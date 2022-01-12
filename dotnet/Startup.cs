@@ -17,7 +17,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using System.Text;
 
 namespace dotnet
-{ 
+{
     public class Startup
     {
         public Startup(IConfiguration configuration)
@@ -32,6 +32,19 @@ namespace dotnet
         {
             services.AddControllers();
             services.AddCors();
+
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey=true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("dasdaadsadasd2131312deni")),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
 
                 
             services.AddDbContext<DataContext>(options => 

@@ -10,4 +10,4 @@ namespace dotnet.Entities
         public byte[] passwordHash { get; set; }
         public byte[] passwordSalt { get; set; }
     }
-} 
+}
