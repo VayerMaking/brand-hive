@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\denis\\Desktop\\DropShark\\dotnet\\dotnet.csproj": {}
+    "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\denis\\Desktop\\DropShark\\dotnet\\dotnet.csproj": {
+    "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\denis\\Desktop\\DropShark\\dotnet\\dotnet.csproj",
+        "projectUniqueName": "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj",
         "projectName": "dotnet",
-        "projectPath": "C:\\Users\\denis\\Desktop\\DropShark\\dotnet\\dotnet.csproj",
+        "projectPath": "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj",
         "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\denis\\Desktop\\DropShark\\dotnet\\obj\\",
+        "outputPath": "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -43,6 +43,10 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
+            "Microsoft.AspNetCore.Authentication.Certificate": {
+              "target": "Package",
+              "version": "[3.0.0-preview6.19307.2, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.0, )"

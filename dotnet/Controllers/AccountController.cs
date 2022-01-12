@@ -17,7 +17,7 @@ namespace dotnet.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class AccountController
+    public class AccountController : ControllerBase
     {
 
         private readonly DataContext _context;
@@ -45,6 +45,7 @@ namespace dotnet.Controllers
                 username = user.UserName,
                 firstName = user.firstName,
                 lastName = user.lastName,
+                role = user.role,
                 token = CreateToken(user)
             };
         }
@@ -79,12 +80,12 @@ namespace dotnet.Controllers
         }
 
         public string CreateToken(AppUser user)
-        {
+        { 
             var claims = new List<Claim>
             {
                 new Claim(JwtRegisteredClaimNames.NameId, user.UserName)
             };
-            var _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("dasdaadsadasd2131312deni"));
+            var _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("deni pravi chat deni pravi chat deni pravi chat"));
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
             var tokenDescriptor = new SecurityTokenDescriptor

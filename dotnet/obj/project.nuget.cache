@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "AO3gsvdlCIWCrv6iXI66xM/jqsKQ10UYr1REaBt9fK+bgYgaFMtxDP7LUlJ7iLOzjO3akIoi/DplYBhnuKyNHw==",
+  "dgSpecHash": "nedhWaaDXe7ZVR8ZXOfyvOTWxWUeOug/zCLD5t4WQ90Xs2S3WdXsLLvw4yhCS1xcjmz2Bl2rH9NicwMYfskWcQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\denis\\Desktop\\DropShark\\dotnet\\dotnet.csproj",
+  "projectFilePath": "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\denis\\.nuget\\packages\\microsoft.aspnetcore.authentication.certificate\\3.0.0-preview6.19307.2\\microsoft.aspnetcore.authentication.certificate.3.0.0-preview6.19307.2.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.0\\microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",

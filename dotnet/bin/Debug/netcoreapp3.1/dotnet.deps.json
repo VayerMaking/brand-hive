@@ -24,6 +24,7 @@
     ".NETCoreApp,Version=v3.1": {
       "dotnet/1.0.0": {
         "dependencies": {
+          "Microsoft.AspNetCore.Authentication.Certificate": "3.0.0-preview6.19307.2",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.0",
           "Microsoft.EntityFrameworkCore": "3.1.0",
           "Microsoft.EntityFrameworkCore.Design": "3.1.0",
@@ -317,6 +318,17 @@
         },
         "compile": {
           "dotnet.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Certificate/3.0.0-preview6.19307.2": {
+        "runtime": {
+          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Certificate.dll": {
+            "assemblyVersion": "3.0.0.0",
+            "fileVersion": "3.0.0.19307"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp3.0/Microsoft.AspNetCore.Authentication.Certificate.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.0": {
@@ -2874,6 +2886,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "Microsoft.AspNetCore.Authentication.Certificate/3.0.0-preview6.19307.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WTZZhsUZPrl5ih3AWxbffmb5d6y+LdrArD/ZQVQyRIFPTBTIDE/R4IDxK+JuPQ0wg3Q2C2+VrvTYFVaCHEwmjQ==",
+      "path": "microsoft.aspnetcore.authentication.certificate/3.0.0-preview6.19307.2",
+      "hashPath": "microsoft.aspnetcore.authentication.certificate.3.0.0-preview6.19307.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.0": {
       "type": "package",

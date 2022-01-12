@@ -9,4 +9,4 @@ namespace dotnet.DTOs
         [Required]
         public string password { get; set; }
     }
-}
+} 
