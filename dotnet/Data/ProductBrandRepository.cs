@@ -17,7 +17,7 @@ namespace dotnet.Data
         public void AddProductBrand(ProductBrand productBrand)
         {
             _context.ProductBrands.Add(productBrand);
-        }
+        } 
 
         public async Task<ProductBrand> GetProductBrandByIdAsync(int id)
         {
@@ -35,6 +35,6 @@ namespace dotnet.Data
         public Task<ProductBrand> RemoveProductBrand(int id)
         {
             throw new System.NotImplementedException();
-        } 
+        }
     }
 }

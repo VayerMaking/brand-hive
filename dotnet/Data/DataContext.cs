@@ -19,7 +19,7 @@ namespace dotnet.Data
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
 
-
+ 
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
@@ -31,4 +31,4 @@ namespace dotnet.Data
         }
     
     }
-} 
+}

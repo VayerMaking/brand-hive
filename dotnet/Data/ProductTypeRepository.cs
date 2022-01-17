@@ -18,7 +18,7 @@ namespace dotnet.Data
         public void AddProductType(ProductType productType)
         {
             _context.ProductTypes.Add(productType);
-        }
+        } 
 
         public async Task<ProductType> GetProductTypeByIdAsync(int id)
         {
@@ -34,4 +34,4 @@ namespace dotnet.Data
             throw new System.NotImplementedException();
         }
     }
-} 
+}

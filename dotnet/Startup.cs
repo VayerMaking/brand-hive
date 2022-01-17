@@ -38,7 +38,7 @@ namespace dotnet
             services.AddControllers();
             services.AddCors();
             services.AddIdentityServices(Configuration);
-             
+              
 
  
 

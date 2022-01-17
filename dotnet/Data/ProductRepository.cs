@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using dotnet.DTOs;
 using dotnet.Entities;
+using dotnet.Helpers;
 using dotnet.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +16,7 @@ namespace dotnet.Data
         public ProductRepository(DataContext context, 
                                 IProductTypeRepository productTypeRepository,
                                 IProductBrandRepository productBrandRepository)
-        {
+        { 
             _productTypeRepository = productTypeRepository;
             _productBrandRepository = productBrandRepository;
             _context = context;
@@ -28,13 +29,15 @@ namespace dotnet.Data
             .FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public async Task<IEnumerable<Product>> GetProductsAsync()
+        public async Task<PagedList<Product>> GetProductsAsync(ProductParams productParams)
         {
-            return await _context.Products
+            var query = _context.Products
             .Include(p => p.ProductType)
-            .Include(p => p.ProductBrand)
-            .ToListAsync();
-        } 
+            .Include(p => p.ProductBrand);
+
+            return await PagedList<Product>.CreateAsync(query,productParams.pageNumber,productParams.pageSize);
+
+        }
 
         public async Task<Product> AddProduct(CreateProductDTO newProductDto, AppUser user)
         {

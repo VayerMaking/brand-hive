@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj": {}
+    "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\dotnet.csproj": {}
   },
   "projects": {
-    "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj": {
+    "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\dotnet.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj",
+        "projectUniqueName": "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\dotnet.csproj",
         "projectName": "dotnet",
-        "projectPath": "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\dotnet.csproj",
+        "projectPath": "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\dotnet.csproj",
         "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\denis\\Desktop\\DropSharkDev\\dotnet\\obj\\",
+        "outputPath": "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -86,7 +86,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.415\\RuntimeIdentifierGraph.json"
         }
       }
     }
