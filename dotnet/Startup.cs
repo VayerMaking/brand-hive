@@ -38,9 +38,9 @@ namespace dotnet
             services.AddControllers();
             services.AddCors();
             services.AddIdentityServices(Configuration);
-             
+            
 
- 
+
 
             // services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             //     .AddJwtBearer(options =>

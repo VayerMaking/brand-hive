@@ -14,4 +14,4 @@ namespace dotnet.Extensions
             return int.Parse(user.FindFirst(ClaimTypes.NameIdentifier)?.Value);
         }
     }
-} 
+}

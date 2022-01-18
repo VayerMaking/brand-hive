@@ -4,4 +4,4 @@ namespace dotnet.DTOs
     {
         public string Name { get; set; }
     }
-} 
+}

@@ -35,6 +35,6 @@ namespace dotnet.Data
         public Task<ProductBrand> RemoveProductBrand(int id)
         {
             throw new System.NotImplementedException();
-        } 
+        }
     }
 }

@@ -7,7 +7,7 @@ using dotnet.Entities;
 using dotnet.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-
+using dotnet.DTOs;
 namespace dotnet.Data
 {
     public class UserRepository : IUserRepository
@@ -55,6 +55,13 @@ namespace dotnet.Data
         public async Task<bool> SaveAllAsync()
         {
             return await _context.SaveChangesAsync() > 0;
+        }
+        public async void SetPermissions(UserDto userdto)
+        {
+            var user = await this.GetUserByUsernameAsync(userdto.username);
+            user.role = userdto.role;
+            await this.SaveAllAsync();
+
         }
 
         public void Update(AppUser user)

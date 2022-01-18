@@ -14,4 +14,4 @@ namespace dotnet.Entities
         public byte[] passwordSalt { get; set; }
 
     }
-} 
+}
