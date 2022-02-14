@@ -15,6 +15,7 @@ using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using dotnet.Interfaces;
 using dotnet.Extensions;
+using dotnet.Helpers;
 namespace dotnet.Controllers
 {
     [ApiController]
@@ -83,11 +84,16 @@ namespace dotnet.Controllers
                 
             };
         }
+
         [HttpGet("getAll")]
-        public async Task<ActionResult<List<ProductBrand>>> GetProducts()
+        public async Task<ActionResult<List<ProductBrand>>> GetAllUsers([FromQuery]ProductParams productParams)
         {
-            return Ok(await _userRepo.GetUsersAsync());
+            var products = await _userRepo.GetUsersAsync(productParams);
+
+            Response.AddPagination(products.CurrentPage, products.PageSize, products.TotalCount, products.TotalPages);
+            return Ok(products);
         }
+
 
         [HttpPost("setPermissions")]
         public async Task<ActionResult<List<ProductBrand>>> SetPermissions(UserDto userdto)
@@ -101,7 +107,7 @@ namespace dotnet.Controllers
             _userRepo.SetPermissions(userdto);
             await _context.SaveChangesAsync();
 
-            return Ok(await _userRepo.GetUsersAsync());
+            return Ok(await _userRepo.GetUsersAsync(new ProductParams()));
         }
         public string CreateToken(AppUser user)
         {
