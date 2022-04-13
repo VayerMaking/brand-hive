@@ -1,0 +1,11 @@
+<div class="container mt-5">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div>Home goes here</div>
+    <button *ngIf=" this.accountService.getCurrentUser()['role']=='seller'" (click)="offerToggle()" class="btn btn-primary btn-lg mr-2">Create offer</button>
+    <div *ngIf="createOfferMode" >
+        <app-create-offer (cancelCreateoffer)="cancelCreateoffer($event)"></app-create-offer>
+    </div>
+</div>

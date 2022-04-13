@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using dotnet.DTOs;
 using dotnet.Entities;
-using dotnet.Helpers;
 using dotnet.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
@@ -29,14 +28,12 @@ namespace dotnet.Data
             .FirstOrDefaultAsync(p => p.Id == id);
         }
 
-        public async Task<PagedList<Product>> GetProductsAsync(ProductParams productParams)
+        public async Task<IEnumerable<Product>> GetProductsAsync()
         {
-            var query = _context.Products
+            return await _context.Products
             .Include(p => p.ProductType)
-            .Include(p => p.ProductBrand);
-
-            return await PagedList<Product>.CreateAsync(query,productParams.pageNumber,productParams.pageSize);
-
+            .Include(p => p.ProductBrand)
+            .ToListAsync();
         }
 
         public async Task<Product> AddProduct(CreateProductDTO newProductDto, AppUser user)

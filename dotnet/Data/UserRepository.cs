@@ -7,8 +7,7 @@ using dotnet.Entities;
 using dotnet.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
-using dotnet.DTOs;
-using dotnet.Helpers;
+
 namespace dotnet.Data
 {
     public class UserRepository : IUserRepository
@@ -29,13 +28,9 @@ namespace dotnet.Data
             return await _context.Users.SingleOrDefaultAsync(x => x.UserName == username);
         }
 
-        public async Task<PagedList<AppUser>> GetUsersAsync(ProductParams productParams)
+        public async Task<IEnumerable<AppUser>> GetUsersAsync()
         {
-            var query = _context.Users;
-
-            return await PagedList<AppUser>.CreateAsync(query,productParams.pageNumber,productParams.pageSize);
-
-            //return await _context.Users.ToListAsync();
+            return await _context.Users.ToListAsync();
         }
         public String GetUsernameByTokenAsync(string token){
             string secret = "deni pravi chat deni pravi chat deni pravi chat"; 
@@ -60,13 +55,6 @@ namespace dotnet.Data
         public async Task<bool> SaveAllAsync()
         {
             return await _context.SaveChangesAsync() > 0;
-        }
-        public async void SetPermissions(UserDto userdto)
-        {
-            var user = await this.GetUserByUsernameAsync(userdto.username);
-            user.role = userdto.role;
-            await this.SaveAllAsync();
-
         }
 
         public void Update(AppUser user)

@@ -11,7 +11,7 @@ using dotnet.Interfaces;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
 using System.Linq;
-using dotnet.Helpers;
+
 namespace dotnet.Controllers
 {
     [ApiController]
@@ -55,12 +55,9 @@ namespace dotnet.Controllers
             
         }
         [HttpGet("getAll")]
-        public async Task<ActionResult<List<ProductBrand>>> GetProducts([FromQuery]ProductParams productParams)
+        public async Task<ActionResult<List<ProductBrand>>> GetProducts()
         {
-            var products = await _productRepository.GetProductsAsync(productParams);
-
-            Response.AddPagination(products.CurrentPage, products.PageSize, products.TotalCount, products.TotalPages);
-            return Ok(products);
+            return Ok(await _productRepository.GetProductsAsync());
         }
 
         [HttpGet("brands/getAll")]

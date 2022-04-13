@@ -1,0 +1,13 @@
+<app-nav></app-nav>
+
+<div class="container mt-5">
+  <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%)">
+        <div *ngIf="!registerMode" style="text-align:center">
+          <h1>Welcome to DropShark</h1>
+          <button (click)="registerToggle()" class="btn btn-primary btn-lg mr-2">Register</button>
+        </div>
+  <div *ngIf="registerMode">
+      <app-register (cancelRegister)="cancelRegisterMode($event)"></app-register>
+  </div>
+  </div>
+</div>

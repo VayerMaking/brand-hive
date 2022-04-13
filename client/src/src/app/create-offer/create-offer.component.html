@@ -1,0 +1,29 @@
+<form #createOfferFor="ngForm" (ngSubmit)="createOffer()" style="background-color:lightcyan; margin: 5%; padding: 20px; border-radius: 5px; border: solid lightblue">
+  <h4>Create offer</h4>
+  <div class="form-group">
+    <label for="itemName">Item name</label>
+    <input name="Name" [(ngModel)]="model.name" type="text" class="form-control" id="itemName" aria-describedby="emailHelp" placeholder="Enter item name">
+    <small id="emailHelp" class="form-text text-muted">Enter item name that people will see on the offer list</small>
+  </div>
+  <div class="form-group">
+    <label for="itemDesc">Item description</label>
+    <input name="Description" [(ngModel)]="model.description" type="text" class="form-control" id="itemDesc" placeholder="Enter item description">
+  </div>
+  <div class="form-group">
+    <label for="Price">Item Price</label>
+    <input name="Price" [(ngModel)]="model.price" type="text" class="form-control" id="Price" placeholder="Enter item price">
+  </div>
+  
+  <mat-form-field appearance="fill">
+    <mat-label>Type</mat-label>
+    <mat-select name="ProductTypeId" [(ngModel)]="model.ProductTypeId">
+      <mat-option *ngFor="let type of types" [value]="type['name']">
+        {{type['name']}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <br>
+  <button type="button" (click)="createOffer()" class="btn btn-primary">Submit</button>
+  <button type="button" (click)="cancel()" class="btn btn-default btn-icon" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancel</button>
+</form>
