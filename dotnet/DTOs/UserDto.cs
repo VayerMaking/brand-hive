@@ -8,4 +8,4 @@ namespace dotnet.DTOs
         public string lastName { get; set; }
         public string token { get; set; }
     }
-} 
+}

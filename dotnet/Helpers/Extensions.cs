@@ -14,4 +14,8 @@ namespace dotnet.Helpers
             
         }
     }
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> Nasko

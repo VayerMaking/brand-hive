@@ -1,0 +1,110 @@
+.product-img {display:inline-block}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif
+}
+
+body {
+    background: linear-gradient(to top, rgb(145, 180, 255) 10%, gold 150%) no-repeat;
+    height: 710px
+}
+
+.results {
+    font-weight: 600
+}
+
+select {
+    border: none;
+    outline: none;
+    padding: 0px 4px;
+    cursor: pointer;
+    background: inherit
+}
+
+.card {
+    border: none;
+    cursor: pointer
+}
+
+.card:hover {
+    transform: scale(1.08);
+    transition: all 0.4s ease-in-out
+}
+.border-button {
+    border: solid 5px #FC5185;
+    transition: border-width 0.6s linear;
+  }
+  .border-button:hover { border-width: 10px; }
+
+.my-2 {
+    border: solid 1px darkgray;
+    transition: border-width 0.6s linear;
+}
+// .my-2:hover {
+//     border-width: 4px; 
+// }
+
+img {
+    background: linear-gradient(to top, rgb(215, 226, 252) 00%, white 100%) no-repeat;;
+    // background-color: #dbe2ff57;
+    width: 150px;
+    height: 220px;
+    object-fit: contain;
+    padding-top: 10px
+}
+
+.card-body {
+    padding: 0.5rem;
+    padding-top: 0.7rem;
+    padding-right: 0.2rem;
+    background-color: white;
+}
+
+.fa-heart {
+    font-size: 1.2rem
+}
+
+.h6 {
+    margin: 0
+}
+
+.btn {
+    padding-top: 0
+}
+
+.btn:hover {
+    color: #fdaa4b
+}
+
+div.text-muted {
+    font-size: 0.9rem
+}
+
+@media(max-width:372px) {
+    .results {
+        font-size: 0.9rem
+    }
+}
+
+@media(max-width:330px) {
+    .results {
+        font-size: 0.85rem
+    }
+}
+
+@media(min-height: 700px) {
+    body {
+        height: 100vh
+    }
+}
+
+@media(max-width:768px) {
+    body {
+        height: 100%
+    }
+}

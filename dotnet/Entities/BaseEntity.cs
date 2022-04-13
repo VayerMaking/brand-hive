@@ -4,4 +4,4 @@ namespace dotnet.Entities
     {
         public int Id { get; set; }
     }
-} 
+}

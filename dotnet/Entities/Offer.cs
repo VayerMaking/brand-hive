@@ -8,4 +8,4 @@ namespace dotnet.Entities
 
         public string description { get; set; }
     }
-} 
+}

@@ -12,4 +12,4 @@ namespace dotnet.Interfaces
         Task<ProductType> RemoveProductType(int id);
         
     }
-} 
+}

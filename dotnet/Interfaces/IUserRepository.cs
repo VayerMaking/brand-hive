@@ -16,4 +16,4 @@ namespace dotnet.Interfaces
         void AddUser(AppUser user);
 
     }
-} 
+}

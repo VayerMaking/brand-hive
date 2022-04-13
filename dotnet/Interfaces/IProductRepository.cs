@@ -14,4 +14,4 @@ namespace dotnet.Interfaces
         Task<Product> AddProduct(CreateProductDTO newProductDto, AppUser user);
         
     }
-} 
+}

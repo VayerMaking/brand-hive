@@ -28,4 +28,8 @@ namespace dotnet.Helpers
             return new PagedList<T>(items,count,pageNumber,pageSize);
         }
     }
+<<<<<<< HEAD
 } 
+=======
+}
+>>>>>>> Nasko

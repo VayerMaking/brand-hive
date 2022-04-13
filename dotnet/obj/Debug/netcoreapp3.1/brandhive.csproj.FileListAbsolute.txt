@@ -1,0 +1,114 @@
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.exe
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.deps.json
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.runtimeconfig.json
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.runtimeconfig.dev.json
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.pdb
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Certificate.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.AssemblyInfo.cs
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.csproj.CopyComplete
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.dll
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.pdb
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.genruntimeconfig.cache
+C:\Users\PC\Desktop\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.exe
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.deps.json
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.runtimeconfig.json
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.runtimeconfig.dev.json
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\brandhive.pdb
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\EntityFramework.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.WebPages.Deployment.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.WebPages.Razor.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.Certificate.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Bcl.HashCode.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Data.Sqlite.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.EntityFrameworkCore.Sqlite.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.batteries_v2.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.nativelibrary.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.core.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\SQLitePCLRaw.provider.dynamic_cdecl.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\alpine-x64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libe_sqlite3.so
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-arm64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-armel\native\libe_sqlite3.so
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-musl-x64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libe_sqlite3.so
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\linux-x86\native\libe_sqlite3.so
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\osx-x64\native\libe_sqlite3.dylib
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-arm\native\e_sqlite3.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\e_sqlite3.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\e_sqlite3.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.csprojAssemblyReference.cache
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.AssemblyInfoInputs.cache
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.AssemblyInfo.cs
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.csproj.CoreCompileInputs.cache
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.csproj.CopyComplete
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.dll
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.pdb
+C:\Users\PC\Desktop\Software Engineering Project\brand-hive\dotnet\obj\Debug\netcoreapp3.1\brandhive.genruntimeconfig.cache
