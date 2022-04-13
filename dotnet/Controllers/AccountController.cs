@@ -13,6 +13,9 @@ using Microsoft.EntityFrameworkCore;
 using System.Security.Claims;
 using System.IdentityModel.Tokens.Jwt;
 using Microsoft.IdentityModel.Tokens;
+using dotnet.Interfaces;
+using dotnet.Extensions;
+using dotnet.Helpers;
 namespace dotnet.Controllers
 {
     [ApiController]
@@ -21,9 +24,11 @@ namespace dotnet.Controllers
     {
 
         private readonly DataContext _context;
-        public AccountController(DataContext context)
+        private readonly IUserRepository _userRepo;
+        public AccountController(DataContext context, IUserRepository userRepo)
         {
             _context = context;
+            _userRepo= userRepo;
         }
 
         [HttpPost("login")]
@@ -64,7 +69,8 @@ namespace dotnet.Controllers
                 firstName = registerDto.firstName,
                 lastName = registerDto.lastName,
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.password)),
-                passwordSalt = hmac.Key
+                passwordSalt = hmac.Key,
+                role = "user"
             };
 
             _context.Users.Add(user);
@@ -79,6 +85,30 @@ namespace dotnet.Controllers
             };
         }
 
+        [HttpGet("getAll")]
+        public async Task<ActionResult<List<ProductBrand>>> GetAllUsers([FromQuery]ProductParams productParams)
+        {
+            var products = await _userRepo.GetUsersAsync(productParams);
+
+            Response.AddPagination(products.CurrentPage, products.PageSize, products.TotalCount, products.TotalPages);
+            return Ok(products);
+        }
+
+
+        [HttpPost("setPermissions")]
+        public async Task<ActionResult<List<ProductBrand>>> SetPermissions(UserDto userdto)
+        {
+            var username = User.GetUsername();
+            var user = await _userRepo.GetUserByUsernameAsync(username);
+            
+            if(user == null) return Unauthorized("Only admins can change roles!");
+            if(user.role != "admin") return Unauthorized("Only admins can change roles!");
+
+            _userRepo.SetPermissions(userdto);
+            await _context.SaveChangesAsync();
+
+            return Ok(await _userRepo.GetUsersAsync(new ProductParams()));
+        }
         public string CreateToken(AppUser user)
         {
             var claims = new List<Claim>
