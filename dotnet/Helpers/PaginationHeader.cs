@@ -15,8 +15,4 @@ namespace dotnet.Helpers
         public int TotalItems { get; set; }
         public int TotalPages { get; set; }
     }
-<<<<<<< HEAD
-} 
-=======
 }
->>>>>>> Nasko

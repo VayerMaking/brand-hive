@@ -45,7 +45,3 @@ namespace dotnet
                 });
     }
 }
-<<<<<<< HEAD
-  
-=======
->>>>>>> Nasko

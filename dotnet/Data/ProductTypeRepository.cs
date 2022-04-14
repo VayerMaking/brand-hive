@@ -18,10 +18,6 @@ namespace dotnet.Data
         public void AddProductType(ProductType productType)
         {
             _context.ProductTypes.Add(productType);
-<<<<<<< HEAD
-        } 
-=======
->>>>>>> Nasko
 
         }
         public async Task<ProductType> GetProductTypeByIdAsync(int id)

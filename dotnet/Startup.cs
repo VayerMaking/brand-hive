@@ -38,12 +38,8 @@ namespace dotnet
             services.AddControllers();
             services.AddCors();
             services.AddIdentityServices(Configuration);
-<<<<<<< HEAD
-              
-=======
             
 
->>>>>>> Nasko
 
 
             // services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
