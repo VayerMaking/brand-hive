@@ -41,7 +41,6 @@ export class ProductListComponent implements OnInit {
 }
 
   ngOnInit() {
-  
     this.getProducts()
     this.getTypes()
     this.getBrands()
@@ -49,9 +48,6 @@ export class ProductListComponent implements OnInit {
   }
 
   getProducts() {
-
-    
-    
     this.http.get(this.baseUrl+'product/getAll', 
     {
       observe: 'response',
@@ -131,10 +127,14 @@ export class ProductListComponent implements OnInit {
   clicked(product: Product): void {
     this.currentProduct = product
     this.onProductSelected.emit(product)
-    this.cartService.addToCart(product);
+    if(!this.cartService.productInCart(product)) {
+      this.toastr.info("Product added to cart", "Cart changed")
+      this.cartService.addToCart(product);
+    }
+    else {
+      this.toastr.error("Product already in cart")
+    }
     this.cartService.printCart();
-    this.toastr.info("Product added to cart", "Cart changed")
-
   }
 
   isSelected(product: Product): boolean {
@@ -164,5 +164,16 @@ export class ProductListComponent implements OnInit {
   onChangeCategory(){
     this.getSizes()
     this.getProducts()
+  }
+
+  clearFilters() {
+    this.filters = [];
+    this.types = [];
+    this.brands = [];
+    this.sizes = [];
+
+    console.log(this.filters)
+
+    this.ngOnInit()    
   }
 }

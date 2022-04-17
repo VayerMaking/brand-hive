@@ -20,17 +20,6 @@ getBrands() {
 }
 
 getTypes() {
-  // return this.http.post(this.baseUrl + 'account/login', model).pipe(
-  //   map((response: any) => {
-  //     const user = response;
-  //     if(user){
-  //       localStorage.setItem('user', JSON.stringify(user));
-  //       console.log(user);
-  //       this.setCurrentUser(user);
-  //     }
-  //     return user;
-  //   })
-  // );
 
   return this.http.get(this.baseUrl+'product/types/getAll').pipe(
     map((response: any) => {
@@ -39,4 +28,16 @@ getTypes() {
     })
   )
 }
+
+deleteProduct(id:any) {
+
+  return this.http.post(this.baseUrl+'product/delete/'+id,{}).pipe(
+    map((response: any) => {
+      console.log(response)
+      return response;
+    })
+  )
+}
+
+
 }

@@ -31,18 +31,17 @@ body {
 
 <div class="container mt-5">
     <br>
-    <br>
-    <br>
-    <br>
-    <h1 class="text" >DropShark</h1>
+
+    <h1 class="text" style="text-align:center; vertical-align: middle;">DropShark</h1>
+
     <button *ngIf="false" (click)="offerToggle()" class="btn btn-primary btn-lg mr-2">Create offer</button>
+    
     <div *ngIf="createOfferMode" >
         <app-create-offer (cancelCreateoffer)="cancelCreateoffer($event)"></app-create-offer>
     </div>
-    <app-product-list
+    
+  <app-product-list
     [productList]="products"
     (onProductSelected)="productWasSelected($event)">
   </app-product-list>
-
-  
 </div>

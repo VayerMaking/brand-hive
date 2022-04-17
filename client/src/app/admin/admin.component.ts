@@ -28,6 +28,10 @@ export class AdminComponent implements OnInit {
               private toastr: ToastrService) { }
 
   ngOnInit() {
+    if(this.accountService.getCurrentUser().role != 'admin') {
+      this.router.navigate(['/home']);
+    } 
+
     this.getUsers();
   }
 

@@ -70,7 +70,7 @@ namespace dotnet.Controllers
                 lastName = registerDto.lastName,
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.password)),
                 passwordSalt = hmac.Key,
-                role = "admin"
+                role = "user"
             };
 
             _context.Users.Add(user);
