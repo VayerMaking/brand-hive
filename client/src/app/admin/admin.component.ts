@@ -63,7 +63,7 @@ export class AdminComponent implements OnInit {
       
   }
   checkIfAdmin(s){
-    if( s.role == 'admin' && this.accountService.getCurrentUser()['username']!=s.userName) return true
+    if( s.role != 'seller' && this.accountService.getCurrentUser()['username']!=s.userName) return true
     return false
   }
   checkIfSeller(s){

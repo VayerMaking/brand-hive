@@ -8,5 +8,6 @@ namespace dotnet.DTOs
         public string PictureUrl { get; set; }
         public int ProductTypeId { get; set; }
         public int ProductBrandId { get; set; }
+        public int ProductSizeId { get; set; }
     }
 }

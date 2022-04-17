@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
     this.createOfferMode= event;
   }
   productWasSelected(halo: Product): void {
-    console.log('Product clicked: ', halo);
+    //console.log('Product clicked: ', halo);
   }
 
   onChangePage(pageOfItems: Array<any>) {

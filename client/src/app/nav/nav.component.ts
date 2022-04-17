@@ -1,10 +1,12 @@
 import { HttpClient } from '@angular/common/http';
 import { Token } from '@angular/compiler/src/ml_parser/lexer';
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AccountServiceService } from '../_services/AccountService.service';
 import { LocalStorageService } from '../_services/LocalStorage.service';
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import { CourseDialogComponent } from '../CourseDialog/CourseDialog.component';
 
 @Component({
   selector: 'app-nav',
@@ -15,11 +17,15 @@ export class NavComponent implements OnInit {
   logged: boolean;
   model: any = {};
   username : string;
+  animal: string;
+  name: string;
 
   constructor(
     public accountService : AccountServiceService, 
     private router : Router,
-    private lsService : LocalStorageService
+    private lsService : LocalStorageService,
+    private dialog: MatDialog
+
     ) {  }
 
   ngOnInit(): void {
@@ -33,6 +39,7 @@ export class NavComponent implements OnInit {
       this.lsService.setAuthData(response)
       this.logged = this.accountService.isLogged();
       console.log("in login()", this.logged)
+      
       
       this.router.navigate(['/home'])
     }, error => {
@@ -77,4 +84,24 @@ export class NavComponent implements OnInit {
     console.log("Sending to Create");
     this.router.navigate(['product']);
   }
+
+  openCartPage(){
+    // const dialogRef = this.dialog.open(DialogOverviewExampleDialog, {
+    //   width: '250px',
+    //   data: {name: this.name, animal: this.animal}
+    // });
+
+    // dialogRef.afterClosed().subscribe(result => {
+    //   console.log('The dialog was closed');
+    //   this.animal = result;
+    // });
+    const dialogConfig = new MatDialogConfig();
+
+        dialogConfig.disableClose = true;
+        dialogConfig.autoFocus = true;
+
+        let a = this.dialog.open(CourseDialogComponent, dialogConfig);
+        console.log(a)
+  }
+
 }

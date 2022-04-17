@@ -69,6 +69,9 @@ namespace dotnet.Migrations
                     b.Property<int>("ProductBrandId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<int>("ProductSizeId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int>("ProductTypeId")
                         .HasColumnType("INTEGER");
 
@@ -78,6 +81,8 @@ namespace dotnet.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("ProductBrandId");
+
+                    b.HasIndex("ProductSizeId");
 
                     b.HasIndex("ProductTypeId");
 
@@ -96,6 +101,28 @@ namespace dotnet.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("ProductBrands");
+                });
+
+            modelBuilder.Entity("dotnet.Entities.ProductSize", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("ProductTypeId")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int>("nameI")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("nameS")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("id");
+
+                    b.HasIndex("ProductTypeId");
+
+                    b.ToTable("ProductSizes");
                 });
 
             modelBuilder.Entity("dotnet.Entities.ProductType", b =>
@@ -120,6 +147,21 @@ namespace dotnet.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
+                    b.HasOne("dotnet.Entities.ProductSize", "ProductSize")
+                        .WithMany()
+                        .HasForeignKey("ProductSizeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("dotnet.Entities.ProductType", "ProductType")
+                        .WithMany()
+                        .HasForeignKey("ProductTypeId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("dotnet.Entities.ProductSize", b =>
+                {
                     b.HasOne("dotnet.Entities.ProductType", "ProductType")
                         .WithMany()
                         .HasForeignKey("ProductTypeId")

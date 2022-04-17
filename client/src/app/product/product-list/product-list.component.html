@@ -21,9 +21,51 @@
   </app-product-row>
 </div>
 
-<mat-paginator [length]="totalPages"
+<div class="row">
+  <mat-form-field appearance="fill" style="width: 150px; margin-right: 10px;">
+    <mat-label>Category</mat-label>
+    <mat-select name="ProductTypeId" (selectionChange)="onChangeCategory()" [(ngModel)]="filters.ProductTypeId">
+      <mat-option *ngFor="let type of types" [value]="type['id']">
+        {{type['name']}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 150px; margin-right: 10px;">
+    <mat-label>Brand</mat-label>
+    <mat-select name="ProductBrandId" (selectionChange)="getProducts()" [(ngModel)]="filters.ProductBrandId">
+      <mat-option *ngFor="let type of brands" [value]="type['id']">
+        {{type['name']}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 150px; margin-right: 10px;">
+    <mat-label>Size</mat-label>
+    <mat-select name="ProductBrandId" (selectionChange)="getProducts()" [(ngModel)]="filters.ProductSizeId">
+      <mat-option *ngFor="let type of sizes" [value]="type['id']">
+        {{type['nameS']}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style="width: 150px;">
+    <mat-label>Order By</mat-label>
+    <mat-select name="orderBy" (selectionChange)="getProducts()" [(ngModel)]="filters.orderBy">
+      <mat-option  [value]="'Price'">Price</mat-option>
+      <mat-option  [value]="'Name'">Name</mat-option>
+      <mat-option  [value]="'Brand'">Brand</mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  <button style="height: 53px;" (click)="onChangeDirection()" mat-button><mat-icon aria-hidden="false" >{{direction}}</mat-icon></button>
+
+  <mat-paginator [length]="totalPages"
 [pageSize]="pageSize"
 [pageSizeOptions]="[6, 12, 25, 100]"
 (page)="onChangePage($event)"
 >
 </mat-paginator>  
+</div>
+
+

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using dotnet.Data;
 using dotnet.Interfaces;
-
+using dotnet.Helpers;
 namespace API.Extensions
 {
     public static class IdentityServiceExtensions
@@ -14,9 +14,14 @@ namespace API.Extensions
         public static IServiceCollection AddIdentityServices( this IServiceCollection services, IConfiguration config)
         {
             services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+            services.AddScoped(typeof(IGenericRepository<>), (typeof(GenericRepository<>)));
             services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IProductSizeShoeRepository, ProductSizeShoeRepository>();
+            services.AddScoped<IProductSizeClothesRepository, ProductSizeClothesRepository>();
             services.AddScoped<IProductTypeRepository, ProductTypeRepository>();
             services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
+            services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => 

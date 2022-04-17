@@ -28,11 +28,14 @@ import { ToastrModule } from 'ngx-toastr';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { ReactiveFormsModule } from '@angular/forms';
-import { environment } from 'src/environments/environment'
+import { environment } from '../environments/environment'
+import { firebaseConfig } from '../environments/firebase';
 import {
   AngularFireStorageModule,
   AngularFireStorageReference,
   AngularFireUploadTask} from "@angular/fire/storage";
+import { MatDialogModule } from '@angular/material/dialog';
+import { CourseDialogComponent } from './CourseDialog/CourseDialog.component';
 
 @NgModule({
   declarations: [						
@@ -45,7 +48,8 @@ import {
       ProductListComponent,
       ProductRowComponent,
       AdminComponent,
-      PagerComponent
+      PagerComponent,
+      CourseDialogComponent
    ],
   imports: [
     BrowserModule,
@@ -55,6 +59,7 @@ import {
     FormsModule,
     MatFormFieldModule,
     MatPaginatorModule,
+    MatDialogModule,
     ReactiveFormsModule,
     MatSelectModule,
     AngularFireStorageModule,
@@ -66,7 +71,7 @@ import {
     AngularFirestoreModule,
     AngularFireStorageModule,
     
-    AngularFireModule.initializeApp(environment.firebaseConfig, "cloud"),
+    AngularFireModule.initializeApp(firebaseConfig, "cloud"),
     BsDropdownModule.forRoot()
   ],
   providers: [
@@ -78,6 +83,7 @@ import {
     AccountServiceService,
     LocalStorageService
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [CourseDialogComponent]
 })
 export class AppModule { }

@@ -29,6 +29,7 @@ export class CreateOfferComponent implements OnInit {
   brands: any
   baseUrl = "https://localhost:5001/";
   types: any;
+  sizes: any;
   fb;
   downloadURL: Observable<string>;
   
@@ -51,6 +52,7 @@ export class CreateOfferComponent implements OnInit {
 
   ngOnInit() {
     this.getTypes()
+    this.getSizes()
     this.pictureForm = this.formBuilder.group({
       photo: [null, Validators.required],
       description: [null, Validators.required],
@@ -100,6 +102,23 @@ export class CreateOfferComponent implements OnInit {
       console.log(error.error);
     })
   }
+
+  getSizes(){
+    this.http.get(this.baseUrl+'product/sizes/getAll', {
+      params: new HttpParams().set("ProductTypeId", this.model.ProductTypeId)
+    }).pipe(
+      map((response: any) => {
+        const types = response;
+        return types;
+      })
+    ).subscribe(response => {
+
+      this.sizes = response;
+      console.log(response[0])
+    }, error => {
+      console.log(error.error);
+    })
+  }
   createOffer() {
 
 
@@ -123,11 +142,16 @@ export class CreateOfferComponent implements OnInit {
     this.model['PictureUrl']=photoUrl
     this.model['Price']=Number(this.model['Price'])
     var myTypeId=0;
-    this.types.forEach(type => {
-      if( type["name"]==this.model['ProductTypeId']) myTypeId=type['id']
+    var mySizeId=0;
+    console.log(this.model)
+    this.sizes.forEach(size => {
+      if( size["nameS"]==this.model['ProductSizeId']) mySizeId=size['id']
     });
-    this.model['ProductTypeId'] = myTypeId;
 
+    
+
+
+    
    this.http.post(this.baseUrl+'product/create', this.model).pipe(
     map((response: any) => {
       console.log(response);
@@ -164,5 +188,9 @@ export class CreateOfferComponent implements OnInit {
           console.log(url);
         }
       });
+  }
+
+  revealSizes() {
+    return this.model.ProductSizeId == null
   }
 }

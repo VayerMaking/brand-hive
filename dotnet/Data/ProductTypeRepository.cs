@@ -18,8 +18,8 @@ namespace dotnet.Data
         public void AddProductType(ProductType productType)
         {
             _context.ProductTypes.Add(productType);
-
         }
+
         public async Task<ProductType> GetProductTypeByIdAsync(int id)
         {
             return await _context.ProductTypes.FindAsync(id);
