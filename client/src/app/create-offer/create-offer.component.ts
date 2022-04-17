@@ -51,6 +51,10 @@ export class CreateOfferComponent implements OnInit {
      private readonly formBuilder: FormBuilder) { }
 
   ngOnInit() {
+    if(this.accountService.getCurrentUser().role != 'seller') {
+      this.router.navigate(['/home']);
+    }
+    
     this.getTypes()
     this.getSizes()
     this.pictureForm = this.formBuilder.group({

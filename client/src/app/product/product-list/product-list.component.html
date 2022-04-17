@@ -1,15 +1,7 @@
 
-<br><br><br><br>
-
 <div class="d-flex align-items-center justify-content-between py-4 results">
   <div style="font-size: 20px;">Browse products</div>
-  <hr style="width:77%;text-align:left;margin-left:10px">
-  
-  <!-- <div> <span>Price: </span> <select name="price" id="price">
-          <option value="l2h" selected>low to high</option>
-          <option value="l2h">high to low</option>
-      </select> </div> -->
-      
+  <hr style="width:77%; text-align:left; margin-left:10px">
 </div>
 
 <div class="ui items row">
@@ -22,6 +14,8 @@
 </div>
 
 <div class="row">
+  <button class="clearFilters" (click)="clearFilters()" mat-button>Clear<br>Filters</button>
+
   <mat-form-field appearance="fill" style="width: 150px; margin-right: 10px;">
     <mat-label>Category</mat-label>
     <mat-select name="ProductTypeId" (selectionChange)="onChangeCategory()" [(ngModel)]="filters.ProductTypeId">

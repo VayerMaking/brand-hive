@@ -1,12 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Token } from '@angular/compiler/src/ml_parser/lexer';
-import { Component, Inject, OnInit } from '@angular/core';
+import { Component, ElementRef, Inject, OnInit, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { AccountServiceService } from '../_services/AccountService.service';
 import { LocalStorageService } from '../_services/LocalStorage.service';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import { CourseDialogComponent } from '../CourseDialog/CourseDialog.component';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-nav',
@@ -15,6 +16,7 @@ import { CourseDialogComponent } from '../CourseDialog/CourseDialog.component';
 })
 export class NavComponent implements OnInit {
   logged: boolean;
+  cartopen: boolean = false;
   model: any = {};
   username : string;
   animal: string;
@@ -23,15 +25,14 @@ export class NavComponent implements OnInit {
   constructor(
     public accountService : AccountServiceService, 
     private router : Router,
+    private toastr : ToastrService,
     private lsService : LocalStorageService,
     private dialog: MatDialog
-
     ) {  }
 
   ngOnInit(): void {
 
   }
-
 
   login(){
     console.log(this.model)
@@ -40,10 +41,10 @@ export class NavComponent implements OnInit {
       this.logged = this.accountService.isLogged();
       console.log("in login()", this.logged)
       
-      
       this.router.navigate(['/home'])
     }, error => {
       console.log(error);
+      this.toastr.error("Invalid login information")
     })
   }
 
@@ -95,13 +96,21 @@ export class NavComponent implements OnInit {
     //   console.log('The dialog was closed');
     //   this.animal = result;
     // });
+    this.cartopen = true;
     const dialogConfig = new MatDialogConfig();
 
-        dialogConfig.disableClose = true;
-        dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
 
-        let a = this.dialog.open(CourseDialogComponent, dialogConfig);
-        console.log(a)
+    let a = this.dialog.open(CourseDialogComponent, dialogConfig);
+    console.log(a)
+
+    this.dialog.afterAllClosed.subscribe(
+      result => {
+        this.cartopen = false;
+    })
+      
+    
   }
 
 }

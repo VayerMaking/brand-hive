@@ -1,6 +1,6 @@
 <button class="mat-icon-button" (click)="close()" style="float:right;">✖</button>
 
-<p>
+<p style="font-size: 20px;">
   Your cart
 </p>
 
@@ -9,16 +9,21 @@
     <tr>
       <th>Name</th>
       <th>Price</th>
+      <th>Photo</th>
+      <th></th>
     </tr>
   </thead>
 
-  <tbody>
-    <tr *ngFor="let p of cart" >
-      <td>{{ p.name }}</td>
-      <td>{{ p.price }}</td>
-      <button class="mat-raised-button" (click)="remove(p)">✖</button>
-    </tr>
+  <tbody style = "max-height: 200px; overflow: auto; overflow-y: scroll">
+      <tr *ngFor="let p of cart" style = "align-content: center;">
+        <td>{{ p.name }}</td>
+        <td>${{ p.price }}</td>
+        <td><img src="{{p.pictureUrl}}" style="width:50px; height: auto;"></td>
+        <td><button class="mat-raised-button" (click)="remove(p)">✖</button></td>
+      </tr>
   </tbody>
 
-  <div id="pp-checkout"></div>
+  <p style="margin-top:15px; font-size: 16px; float: right;"> Total: ${{this.total}} </p>
 </table>
+
+<div id="pp-checkout" style="margin-left: 78px;"></div>

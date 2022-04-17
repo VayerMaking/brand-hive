@@ -21,6 +21,7 @@ namespace API.Extensions
             services.AddScoped<IProductSizeClothesRepository, ProductSizeClothesRepository>();
             services.AddScoped<IProductTypeRepository, ProductTypeRepository>();
             services.AddScoped<IProductBrandRepository, ProductBrandRepository>();
+            services.AddScoped<IOrderRepository, OrderRepository>();
             services.Configure<CloudinarySettings>(config.GetSection("CloudinarySettings"));
             
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
