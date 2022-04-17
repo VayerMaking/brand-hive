@@ -1,5 +1,5 @@
 import { Component, HostBinding, Input, OnInit } from '@angular/core';
-import { Product } from 'src/app/_models/Product';
+import { Product } from '../../_models/Product';
 
 @Component({
   selector: 'app-product-row',
@@ -13,7 +13,6 @@ export class ProductRowComponent implements OnInit {
 
   ngOnInit() {
     if(this.product.pictureUrl.length<10) this.product.pictureUrl = "https://safetyaustraliagroup.com.au/wp-content/uploads/2019/05/image-not-found.png"
-    console.log('a')
   }
 
 }

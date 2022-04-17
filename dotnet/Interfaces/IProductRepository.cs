@@ -12,6 +12,7 @@ namespace dotnet.Interfaces
         Task<PagedList<Product>> GetProductsAsync(ProductParams productParams);
         Task<Product> GetProductByIdAsync(int id);
         Task<Product> AddProduct(CreateProductDTO newProductDto, AppUser user);
+        Task<int> DeleteProduct(int id);
         
     }
 }

@@ -1,0 +1,24 @@
+<button class="mat-icon-button" (click)="close()" style="float:right;">✖</button>
+
+<p>
+  Your cart
+</p>
+
+<table class="styled-table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Price</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let p of cart" >
+      <td>{{ p.name }}</td>
+      <td>{{ p.price }}</td>
+      <button class="mat-raised-button" (click)="remove(p)">✖</button>
+    </tr>
+  </tbody>
+
+  <div id="pp-checkout"></div>
+</table>

@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  firebaseConfig: {
+  firebase: {
     apiKey: "AIzaSyBD8TBUnAmZv5vOmQ481dDIa6ZMZdFpraY",
     authDomain: "dropshark-5b477.firebaseapp.com",
     projectId: "dropshark-5b477",

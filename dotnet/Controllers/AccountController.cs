@@ -70,7 +70,7 @@ namespace dotnet.Controllers
                 lastName = registerDto.lastName,
                 passwordHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(registerDto.password)),
                 passwordSalt = hmac.Key,
-                role = "user"
+                role = "admin"
             };
 
             _context.Users.Add(user);
@@ -104,10 +104,11 @@ namespace dotnet.Controllers
             if(user == null) return Unauthorized("Only admins can change roles!");
             if(user.role != "admin") return Unauthorized("Only admins can change roles!");
 
-            _userRepo.SetPermissions(userdto);
-            await _context.SaveChangesAsync();
+            this._userRepo.SetPermissions(userdto);
+            return Ok(userdto);
 
-            return Ok(await _userRepo.GetUsersAsync(new ProductParams()));
+
+            
         }
         public string CreateToken(AppUser user)
         {

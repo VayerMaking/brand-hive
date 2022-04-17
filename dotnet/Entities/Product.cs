@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Identity;
+
 namespace dotnet.Entities
 {
     public class Product : BaseEntity
@@ -11,5 +15,9 @@ namespace dotnet.Entities
         public int ProductTypeId { get; set; }
         public ProductBrand ProductBrand { get; set; }
         public int ProductBrandId { get; set; }
+         
+         public ProductSize ProductSize { get; set; }
+         public int ProductSizeId { get; set; }
+
     }
 }

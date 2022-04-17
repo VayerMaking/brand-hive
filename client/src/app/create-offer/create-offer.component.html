@@ -11,22 +11,30 @@
     <label for="itemDesc">Item description</label>
     <input name="Description" [(ngModel)]="model.Description" type="text" class="form-control" id="itemDesc" placeholder="Enter item description">
   </div>
-  <div class="form-group">
-    <label for="itemPhoto">Item photo</label>
-    <input name="Photo" [(ngModel)]="model.photo"
+  <input name="Photo" [(ngModel)]="model.photo"
     (change)="onFileSelected($event)" #fileField type="file" class="form-control" id="itemPhoto" placeholder="Upload photo">
-  </div>
   
   <div class="form-group">
-    <label for="Price">Item Price</label>
+    <label for="Price">Item Price ($)</label>
     <input name="Price" [(ngModel)]="model.Price" type="text" class="form-control" id="Price" placeholder="Enter item price">
   </div>
+
   
-  <mat-form-field appearance="fill">
+  
+  <mat-form-field appearance="fill" style = "margin-right: 10px;">
     <mat-label>Type</mat-label>
-    <mat-select name="ProductTypeId" [(ngModel)]="model.ProductTypeId">
-      <mat-option *ngFor="let type of types" [value]="type['name']">
+    <mat-select name="ProductTypeId" (selectionChange)="getSizes()" [(ngModel)]="model.ProductTypeId">
+      <mat-option *ngFor="let type of types" [value]="type['id']">
         {{type['name']}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field appearance="fill" style = "margin-right: 10px;">
+    <mat-label>Size</mat-label>
+    <mat-select  [disabled]="model.ProductTypeId == null" name="ProductSizeId" [(ngModel)]="model.ProductSizeId">
+      <mat-option *ngFor="let size of sizes" [value]="size['id']">
+        {{size['nameS']}}
       </mat-option>
     </mat-select>
   </mat-form-field>
@@ -34,5 +42,5 @@
 
   <br>
   <button type="button" (click)="createOffer()" class="btn btn-primary" [disabled]="this.selectedFile == null" >Submit</button>
-  <button type="button" (click)="cancel()" class="btn btn-default btn-icon" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancel</button>
+  <button type="button" (click)="cancel()"  class="btn btn-default btn-icon" data-dismiss="modal"><i class="fa fa-times-circle"></i> Cancel</button>
 </form>

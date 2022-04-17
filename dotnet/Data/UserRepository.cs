@@ -17,7 +17,7 @@ namespace dotnet.Data
         public UserRepository(DataContext context)
         {
             _context = context;
-        } 
+        }
 
         public async Task<AppUser> GetUserByIdAsync(int id)
         {
