@@ -27,11 +27,13 @@ namespace dotnet.Controllers
         private readonly IProductTypeRepository _productTypeRepository;
         private readonly IProductBrandRepository _productBrandRepository;
         private readonly IProductSizeShoeRepository _productSizeRepository;
+        private readonly IRateRepository _rateRepository;
         public ProductController(IUserRepository UserRepository,
                                  IProductRepository ProductRepository, 
                                  IProductTypeRepository ProductTypeRepository,
                                  IProductBrandRepository ProductBrandRepository,
                                  IProductSizeShoeRepository ProductSizeRepository,
+                                 IRateRepository RateRepository,
                                  DataContext context)
         {
             _context = context;
@@ -40,6 +42,7 @@ namespace dotnet.Controllers
             _productTypeRepository = ProductTypeRepository;
             _productBrandRepository = ProductBrandRepository;
             _productSizeRepository = ProductSizeRepository;
+            _rateRepository = RateRepository;
         }
         [HttpPost("create")]
         public async Task<ActionResult<Product>> CreateProduct(CreateProductDTO newProductDto)
@@ -63,9 +66,34 @@ namespace dotnet.Controllers
         public async Task<ActionResult<List<ProductBrand>>> GetProducts([FromQuery]ProductParams productParams)
         {
             var products = await _productRepository.GetProductsAsync(productParams);
+            var productDtos = new List<ProductDTO>();
 
+            foreach(var product in products){
+
+                int sellerRate = await _rateRepository.GetRatingAsync(product.sellerId);
+                int sellerRatesTotal = await _rateRepository.GetRatingsCount(product.sellerId);
+
+                productDtos.Add(new ProductDTO{
+                    id = product.Id,
+                    sellerId = product.sellerId,
+                    sellerRate = sellerRate,
+                    sellerRatesTotal = sellerRatesTotal,
+                    Name = product.Name,
+                    Description = product.Description,
+                    Price = product.Price,
+                    PictureUrl = product.PictureUrl,
+                    ProductType = product.ProductType,
+                    ProductTypeId = product.ProductTypeId,
+                    ProductBrand = product.ProductBrand,
+                    ProductBrandId = product.ProductBrandId,
+                    ProductSize = product.ProductSize,
+                    ProductSizeId = product.ProductSizeId,
+                            
+            });
+            }
+            
             Response.AddPagination(products.CurrentPage, products.PageSize, products.TotalCount, products.TotalPages);
-            return Ok(products);
+            return Ok(productDtos);
         }
         [HttpPost("delete/{id}")]
         public async Task<ActionResult<List<ProductBrand>>> GetProducts(int id)

@@ -5,6 +5,9 @@ import { MAT_DIALOG_DATA } from "@angular/material/dialog";
 import { FormsModule } from "@angular/forms";
 import { ToastrService } from 'ngx-toastr';
 import { ProductServiceService } from '../_services/ProductService.service';
+import { OrderServiceService } from '../_services/OrderService.service';
+import { Order } from '../_models/Order';
+import { AccountServiceService } from '../_services/AccountService.service';
 
 declare let paypal:any;
 
@@ -15,7 +18,10 @@ declare let paypal:any;
 })
 
 export class CourseDialogComponent implements OnInit {
+  address : string;
+  zip: number;
   total: any = 0;
+  model: any = {};
   addScript: boolean = false;
   paypalConfig = {
     locale: 'en_US',
@@ -46,12 +52,35 @@ export class CourseDialogComponent implements OnInit {
           console.log("payment completed");
           this.toastr.success("Payment successful", "Paypal")
           this.close();
+
+          this.address = payment.payer.payer_info.shipping_address.city + ' ' + payment.payer.payer_info.shipping_address.line1;
+          this.zip = payment.payer.payer_info.shipping_address.postal_code;
+
+          
+          if(this.model.addressLine){
+            this.address = this.model.addressLine
+          }
+          if(this.model.zip){
+            this.zip = this.model.zip
+          }
           this.cart.forEach(element => {
-            this.productService.deleteProduct(element.id).subscribe();
+            var o = new Order(element.sellerId, element.id,  this.address, Number(this.zip));
+            this.orderService.addOrder(o);
+            //this.productService.deleteProduct(element.id).subscribe();
+          
           });
           this.cart = [];
           this.cartService.emptyCart();
-          window.location.reload();
+
+          
+
+          this.cart.forEach(element => {
+            //this.orderService.addOrder(o);
+            this.productService.deleteProduct(element.id).subscribe();
+          
+          });
+
+          //window.location.reload();
           
       })
     }
@@ -60,7 +89,9 @@ export class CourseDialogComponent implements OnInit {
   constructor(private cartService: CartService,
     private dialogRef: MatDialogRef<CourseDialogComponent>,
     private toastr: ToastrService,
-    private productService: ProductServiceService
+    private productService: ProductServiceService,
+    private orderService: OrderServiceService,
+    private accountService: AccountServiceService
     ) { }
 
   cart: any;
@@ -70,6 +101,7 @@ export class CourseDialogComponent implements OnInit {
     this.cart=this.cartService.getItems()
     this.cart.forEach(e => {
       this.total+=e.price
+      console.log(e.sellerId);
       console.log(e.price);
     });
     if(!this.addScript){

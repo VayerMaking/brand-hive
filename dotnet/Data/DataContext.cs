@@ -20,6 +20,7 @@ namespace dotnet.Data
         public DbSet<ProductSize> ProductSizes { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Rate> Rates { get; set; }
 
 
         protected override void OnModelCreating(ModelBuilder builder)

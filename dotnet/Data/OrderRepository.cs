@@ -77,7 +77,27 @@ namespace dotnet.Data
             .Include(p => p.buyer)
             .Where(w => w.buyerId == id)
             .AsQueryable();
+            if (orderParams.filters != null){
 
+                try{
+                    var filters = JObject.Parse(orderParams.filters);
+
+                    foreach(var item in filters)
+                    {
+                        switch(item.Key)
+                        {
+                            case "isCompleted":
+                                var isCompleted = bool.Parse(item.Value.ToString());
+                                query = query.Where(u => u.isCompleted == isCompleted);
+                                break;
+                        }
+                    }
+                }catch{
+                    
+                }
+                
+
+            }
             return await PagedList<Order>.CreateAsync(query,orderParams.pageNumber,orderParams.pageSize);
         }
 

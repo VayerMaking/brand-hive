@@ -26,4 +26,11 @@
   <p style="margin-top:15px; font-size: 16px; float: right;"> Total: ${{this.total}} </p>
 </table>
 
-<div id="pp-checkout" style="margin-left: 78px;"></div>
+<div class="form-group">
+  <label for="AlternativeAddress">Enter alternative address. Leave blank for PayPal address</label>
+  <input name="AlternativeAddress" [required]="true" [(ngModel)]="model.addressLine" type="text" style=" font-size: 13px;" class="form-control" id="AlternativeAddress" placeholder="Alternative address">
+  <label for="AlternativeZip">Enter alternative zip code. Leave blank for PayPal zip code</label>
+  <input name="AlternativeZip" [required]="model.addressLine ? true : false" [(ngModel)]="model.zip" type="text" style=" font-size: 13px;" class="form-control" id="AlternativeZip" placeholder="Alternative zip code">
+  <div id="pp-checkout" type="submit" style="margin-left: 78px;"></div>
+</div>
+

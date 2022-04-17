@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, ReplaySubject } from 'rxjs';
 import { map } from 'rxjs/operators'
@@ -100,6 +100,22 @@ getUsers(){
   )
 }
 
+rateSeller(sellerId: any, score: any) {
+  return this.http.post(this.baseUrl+'account/addRate',
+  {
+
+    sellerId: sellerId,
+    score: score
+
+  }
+  
+  ).pipe(
+    map((response: any) => {
+      
+    })
+  )
+}
+
 makeSeller(username){
   var u = new User(username,"seller")
 
@@ -113,6 +129,7 @@ makeSeller(username){
     })
   )
 }
+
 
 makeAdmin(u){
   var user = new User(u,"admin")

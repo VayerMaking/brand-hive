@@ -17,6 +17,7 @@ import { ToastrService } from 'ngx-toastr';
 export class NavComponent implements OnInit {
   logged: boolean;
   cartopen: boolean = false;
+  seller: boolean = false;
   model: any = {};
   username : string;
   animal: string;
@@ -31,7 +32,8 @@ export class NavComponent implements OnInit {
     ) {  }
 
   ngOnInit(): void {
-
+    if(this.accountService.getRole.toString() == "seller")
+      this.seller = true;
   }
 
   login(){
@@ -84,6 +86,11 @@ export class NavComponent implements OnInit {
   sendToCreateOffer() {
     console.log("Sending to Create");
     this.router.navigate(['product']);
+  }
+
+  openOrders() {
+    console.log("Sending to orders");
+    this.router.navigate(['orders']);
   }
 
   openCartPage(){

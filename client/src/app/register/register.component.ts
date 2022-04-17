@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { AccountServiceService } from '../_services/AccountService.service';
 
 @Component({
@@ -12,7 +13,11 @@ export class RegisterComponent implements OnInit {
   @Output() cancelRegister = new EventEmitter();
   model: any = {};
   logged: any;
-  constructor(private accountService: AccountServiceService) { this.logged = accountService.isLogged; }
+
+  constructor(private accountService: AccountServiceService,
+              private router: Router) { 
+                this.logged = accountService.isLogged; 
+              }
 
   ngOnInit(): void {
   }
@@ -22,6 +27,7 @@ export class RegisterComponent implements OnInit {
     this.accountService.register(this.model).subscribe(response=> {
       console.log(response);
       this.cancel();
+      this.router.navigate(['/home'])
     }, error => {
       console.log(error);
     })

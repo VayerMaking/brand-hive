@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CreateOfferComponent } from './create-offer/create-offer.component';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatSelectModule } from '@angular/material/select';
+import { MatGridListModule } from '@angular/material/grid-list';
 import { AdminComponent } from './admin/admin.component';
 import { AccountServiceService } from './_services/AccountService.service';
 import { LocalStorageService } from './_services/LocalStorage.service';
@@ -24,6 +25,7 @@ import {MatIconModule} from '@angular/material/icon';
 import { JwPaginationComponent } from 'jw-angular-pagination';
 import { PagerComponent } from './pager/pager.component';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatButtonModule } from '@angular/material/button'
 import { ToastrModule } from 'ngx-toastr';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
@@ -36,20 +38,22 @@ import {
   AngularFireUploadTask} from "@angular/fire/storage";
 import { MatDialogModule } from '@angular/material/dialog';
 import { CourseDialogComponent } from './CourseDialog/CourseDialog.component';
+import { currentOrdersComponent } from './currentOrders/currentOrders.component';
 
 @NgModule({
   declarations: [						
-      AppComponent,
-      NavComponent,
-      HomeComponent,
-      IndexComponent,
-      RegisterComponent,
-      CreateOfferComponent,
-      ProductListComponent,
-      ProductRowComponent,
-      AdminComponent,
-      PagerComponent,
-      CourseDialogComponent
+    AppComponent,
+    NavComponent,
+    HomeComponent,
+    IndexComponent,
+    RegisterComponent,
+    CreateOfferComponent,
+    currentOrdersComponent,
+    ProductListComponent,
+    ProductRowComponent,
+    AdminComponent,
+    PagerComponent,
+    CourseDialogComponent
    ],
   imports: [
     BrowserModule,
@@ -57,11 +61,13 @@ import { CourseDialogComponent } from './CourseDialog/CourseDialog.component';
     HttpClientModule,
     MatIconModule,
     FormsModule,
+    MatButtonModule,
     MatFormFieldModule,
     MatPaginatorModule,
     MatDialogModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatGridListModule,
     AngularFireStorageModule,
     ToastrModule.forRoot({
       positionClass: 'toast-bottom-right',

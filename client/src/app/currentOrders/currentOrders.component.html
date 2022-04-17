@@ -1,0 +1,88 @@
+<br>
+<br>
+<br>
+<br>
+<div *ngIf="this.completed == 'false'" style="text-align: center; font-size: 15px;">Pending orders</div>
+<div *ngIf="this.completed == 'true'" style="text-align: center; font-size: 15px;">Completed orders</div>
+
+<div style="text-align:center">
+    <div style="float:left; width:10%" >
+    <div *ngIf="this.completed == 'false'">
+        <button class="orderbutton" (click)="this.changeOrders()">Completed</button>
+    </div>
+    <div *ngIf="this.completed == 'true'">
+        <button class="orderbutton" (click)="this.changeOrders()">Pending</button>
+    </div>
+    </div>
+
+    <div  class="row" style="float:right; width:25%" *ngIf="this.accountService.getRole() == 'user'">
+        <mat-form-field style="margin-left: 30px; width: 100px;" appearance="fill">
+            <mat-label>Rating</mat-label>
+            <mat-select  [disabled]="false" name="ProductSizeId" [(ngModel)]="model.score">
+            <mat-option [value]="1">1</mat-option>
+            <mat-option [value]="2">2</mat-option>
+            <mat-option [value]="3">3</mat-option>
+            <mat-option [value]="4">4</mat-option>
+            <mat-option [value]="5">5</mat-option>
+            <mat-option [value]="6">6</mat-option>
+            <mat-option [value]="7">7</mat-option>
+            <mat-option [value]="8">8</mat-option>
+            <mat-option [value]="9">9</mat-option>
+            <mat-option [value]="10">10</mat-option>
+            
+        </mat-select>
+        </mat-form-field>
+        <div class="form-group">
+            <input name="Seller" [readonly]="true" [(ngModel)]="model.seller.userName" type="text" style="width: 120px; margin-left:15px" class="form-control" id="seller" placeholder="Select seller">
+        </div>
+        <button class='btn btn-primary' (click)="rateSeller()" style="width: 120px; height: 50px; margin-left:15px">Rate seller</button> 
+    </div>
+</div>
+
+
+<table class="table table-stripped">
+    <thead>
+        <tr *ngIf="this.accountService.getRole() == 'seller'">
+            
+            <th>Buyer Username</th>
+            <th>Buyer Address</th>
+            <th>Buyer zip code</th>
+            <th>Product</th>
+            
+        </tr>
+        <tr *ngIf="this.accountService.getRole() == 'user'">
+            <th>Product</th>
+            <th>Seller</th>
+            <th>Price</th>
+            
+            
+        </tr>
+    </thead>
+
+    <tbody *ngIf="this.accountService.getRole() == 'seller'">
+        <tr *ngFor="let order of this.orders" >
+            
+            <td><span>{{order.buyer.userName}}</span></td>
+            <td><span>{{order.addressLine}}</span></td>
+            <td><span>{{order.zipCode}}</span></td>
+            <td><span>{{order.product.name}}</span></td>
+            <button class='btn btn-primary' *ngIf="this.completed == 'false'" (click)="markCompleted(order.id)" style="width: 180px; margin-left:15px">Mark completed</button>
+          
+        </tr>
+    </tbody>
+
+    <tbody *ngIf="this.accountService.getRole() == 'user'">
+        <tr *ngFor="let order of this.orders" >
+            <td><span>{{order.product.name}}</span></td>
+            <td><span>{{order.seller.userName}}</span></td>
+            <td><span>{{order.product.price}}</span></td>
+            <button class='btn btn-primary' (click)="selectSeller(order.seller)" style="width: 80px; margin-left:15px">Select</button> 
+            
+
+        
+          
+        </tr>
+    </tbody>
+</table>
+
+<!--<button class="orderbutton" (click)="this.refreshOrders()">get orders</button>-->

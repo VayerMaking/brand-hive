@@ -22,13 +22,17 @@ namespace dotnet.Controllers
     [Route("[controller]")]
     public class AccountController : ControllerBase
     {
+        
 
         private readonly DataContext _context;
         private readonly IUserRepository _userRepo;
-        public AccountController(DataContext context, IUserRepository userRepo)
+        private readonly IRateRepository _rateRepo;
+        public AccountController(DataContext context, IUserRepository userRepo, IRateRepository rateRepo)
         {
+            _rateRepo = rateRepo;
             _context = context;
-            _userRepo= userRepo;
+            _userRepo = userRepo;
+
         }
 
         [HttpPost("login")]
@@ -36,17 +40,19 @@ namespace dotnet.Controllers
         {
             var user = await _context.Users.SingleOrDefaultAsync(user => user.UserName == loginDto.username);
 
-            if(user == null) return new UnauthorizedResult();
-            
+            if (user == null) return new UnauthorizedResult();
+
             using var hmac = new HMACSHA512(user.passwordSalt);
 
             var computedHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(loginDto.password));
 
-            for(int i = 0; i < computedHash.Length; i++){
-                if(computedHash[i] != user.passwordHash[i]) return new UnauthorizedResult();
+            for (int i = 0; i < computedHash.Length; i++)
+            {
+                if (computedHash[i] != user.passwordHash[i]) return new UnauthorizedResult();
             }
 
-            return new UserDto{
+            return new UserDto
+            {
                 username = user.UserName,
                 firstName = user.firstName,
                 lastName = user.lastName,
@@ -58,8 +64,8 @@ namespace dotnet.Controllers
         [HttpPost("register")] // 192.168.1.4/account/register
         public async Task<ActionResult<UserDto>> register(RegisterDto registerDto)
         {
-            if( await UserExists(registerDto.username) ) return new BadRequestResult();
-            
+            if (await UserExists(registerDto.username)) return new BadRequestResult();
+
 
             using var hmac = new HMACSHA512();
 
@@ -76,22 +82,46 @@ namespace dotnet.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            return new UserDto{
-                username=user.UserName,
+            return new UserDto
+            {
+                username = user.UserName,
                 firstName = user.firstName,
                 lastName = user.lastName,
                 token = CreateToken(user)
-                
+
             };
         }
 
         [HttpGet("getAll")]
-        public async Task<ActionResult<List<ProductBrand>>> GetAllUsers([FromQuery]ProductParams productParams)
+        public async Task<ActionResult<List<ProductBrand>>> GetAllUsers([FromQuery] ProductParams productParams)
         {
             var products = await _userRepo.GetUsersAsync(productParams);
 
             Response.AddPagination(products.CurrentPage, products.PageSize, products.TotalCount, products.TotalPages);
             return Ok(products);
+        }
+
+        [HttpPost("addRate")]
+        public async Task<ActionResult<RateDTO>> AddRate(RateDTO rateDto)
+        {
+            var username = User.GetUsername();
+            var user = await _userRepo.GetUserByUsernameAsync(username);
+
+            if(rateDto.score<1 || rateDto.score>10) return Unauthorized("Invalid score range");
+            
+            if((await _rateRepo.RatingExists(user.Id, rateDto.sellerId))) return Unauthorized("You have already rated that user!");
+
+            var rate = new Rate{
+                sellerId = rateDto.sellerId,
+                clientId = user.Id,
+                score = rateDto.score
+
+            };
+            _rateRepo.AddRating(rate);
+            await _context.SaveChangesAsync();
+
+            
+            return Ok(rateDto);
         }
 
 
@@ -100,15 +130,15 @@ namespace dotnet.Controllers
         {
             var username = User.GetUsername();
             var user = await _userRepo.GetUserByUsernameAsync(username);
-            
-            if(user == null) return Unauthorized("Only admins can change roles!");
-            if(user.role != "admin") return Unauthorized("Only admins can change roles!");
+
+            if (user == null) return Unauthorized("Only admins can change roles!");
+            if (user.role != "admin") return Unauthorized("Only admins can change roles!");
 
             this._userRepo.SetPermissions(userdto);
             return Ok(userdto);
 
 
-            
+
         }
         public string CreateToken(AppUser user)
         {
