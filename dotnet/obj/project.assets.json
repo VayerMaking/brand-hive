@@ -4620,11 +4620,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\dotnet.csproj",
+      "projectUniqueName": "C:\\Users\\denis\\Desktop\\brandhive2\\brand-hive\\dotnet\\dotnet.csproj",
       "projectName": "dotnet",
-      "projectPath": "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\dotnet.csproj",
+      "projectPath": "C:\\Users\\denis\\Desktop\\brandhive2\\brand-hive\\dotnet\\dotnet.csproj",
       "packagesPath": "C:\\Users\\denis\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\obj\\",
+      "outputPath": "C:\\Users\\denis\\Desktop\\brandhive2\\brand-hive\\dotnet\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

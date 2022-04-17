@@ -2,20 +2,25 @@
 <br>
 <br>
 <br>
-<div *ngIf="this.completed == 'false'" style="text-align: center; font-size: 15px;">Pending orders</div>
-<div *ngIf="this.completed == 'true'" style="text-align: center; font-size: 15px;">Completed orders</div>
 
-<div style="text-align:center">
-    <div style="float:left; width:10%" >
-    <div *ngIf="this.completed == 'false'">
-        <button class="orderbutton" (click)="this.changeOrders()">Completed</button>
+<div>
+    <div *ngIf="this.completed == 'false'" style="text-align: center; font-size: 15px; margin-right: 200px; margin-bottom: 20px;">Pending orders
+        <div style="float:left; width:10%; margin-left:10px; margin-bottom: 15px;">
+            <div *ngIf="this.completed == 'false'">
+                <button class="orderbutton" (click)="this.changeOrders()">Completed</button>
+            </div>
+        </div>
     </div>
-    <div *ngIf="this.completed == 'true'">
-        <button class="orderbutton" (click)="this.changeOrders()">Pending</button>
-    </div>
+    
+    <div *ngIf="this.completed == 'true'" style="text-align: center; font-size: 15px; margin-right: 200px; margin-bottom: 20px;">Completed orders
+        <div style="float:left; width:10%; margin-left:10px; margin-bottom: 15px;">
+            <div *ngIf="this.completed == 'true'">
+                <button class="orderbutton" (click)="this.changeOrders()">Pending</button>
+            </div>
+        </div>
     </div>
 
-    <div  class="row" style="float:right; width:25%" *ngIf="this.accountService.getRole() == 'user'">
+    <div class="row" style="float:right; width:25%; margin-top: -15px;" *ngIf="this.accountService.getRole() == 'user'">
         <mat-form-field style="margin-left: 30px; width: 100px;" appearance="fill">
             <mat-label>Rating</mat-label>
             <mat-select  [disabled]="false" name="ProductSizeId" [(ngModel)]="model.score">
@@ -32,12 +37,19 @@
             
         </mat-select>
         </mat-form-field>
-        <div class="form-group">
-            <input name="Seller" [readonly]="true" [(ngModel)]="model.seller.userName" type="text" style="width: 120px; margin-left:15px" class="form-control" id="seller" placeholder="Select seller">
+        <div class="form-group" style="margin-top: 8px;">
+            <input name="Seller" [readonly]="true" [(ngModel)]="model.seller.userName" type="text" style="width: 120px; margin-left:15px;" class="form-control" id="seller" placeholder="Select seller">
         </div>
         <button class='btn btn-primary' (click)="rateSeller()" style="width: 120px; height: 50px; margin-left:15px">Rate seller</button> 
     </div>
 </div>
+
+
+<div style="text-align:center; width: 70%;  margin:0 auto;">
+    
+
+    
+
 
 
 <table class="table table-stripped">
@@ -66,7 +78,7 @@
             <td><span>{{order.addressLine}}</span></td>
             <td><span>{{order.zipCode}}</span></td>
             <td><span>{{order.product.name}}</span></td>
-            <button class='btn btn-primary' *ngIf="this.completed == 'false'" (click)="markCompleted(order.id)" style="width: 180px; margin-left:15px">Mark completed</button>
+            <button class='btn btn-primary' *ngIf="this.completed == 'false'" (click)="markCompleted(order.id)" style="width: 180px; margin-left: 30px;">Mark completed</button>
           
         </tr>
     </tbody>
@@ -76,13 +88,17 @@
             <td><span>{{order.product.name}}</span></td>
             <td><span>{{order.seller.userName}}</span></td>
             <td><span>{{order.product.price}}</span></td>
-            <button class='btn btn-primary' (click)="selectSeller(order.seller)" style="width: 80px; margin-left:15px">Select</button> 
-            
-
-        
-          
+            <button class='btn btn-primary' (click)="selectSeller(order.seller)" style="width: 180px; margin-left: 30px;">Select</button> 
         </tr>
     </tbody>
 </table>
+<mat-paginator [length]="totalPages"
+[pageSize]="pageSize"
+[pageSizeOptions]="[6, 12, 25, 100]"
+(page)="onChangePage($event)"
+>
+</mat-paginator>
+</div>
+
 
 <!--<button class="orderbutton" (click)="this.refreshOrders()">get orders</button>-->

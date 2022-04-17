@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "GLzWolsSvjCry1tWAtdWiZgcm2MZ6Bm9dBkjbOa4tjp2oZO+3nkQBmYlu5n6Q20SnAo1rp3hhamGA2oJURSrOQ==",
+  "dgSpecHash": "kV3wqZNvyr1UF8IZN3PcHi53c+KpIYXQEqBA8WSUz0zQStuGU77iiF0g3q79jtSq/KQoIYRDvpHkqHGrUmtYPQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\denis\\Desktop\\brand-hive\\dotnet\\dotnet.csproj",
+  "projectFilePath": "C:\\Users\\denis\\Desktop\\brandhive2\\brand-hive\\dotnet\\dotnet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\denis\\.nuget\\packages\\microsoft.aspnetcore.authentication.certificate\\3.0.0-preview6.19307.2\\microsoft.aspnetcore.authentication.certificate.3.0.0-preview6.19307.2.nupkg.sha512",
     "C:\\Users\\denis\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.0\\microsoft.aspnetcore.authentication.jwtbearer.3.1.0.nupkg.sha512",

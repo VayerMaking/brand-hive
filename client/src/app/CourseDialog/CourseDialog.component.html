@@ -31,6 +31,7 @@
   <input name="AlternativeAddress" [required]="true" [(ngModel)]="model.addressLine" type="text" style=" font-size: 13px;" class="form-control" id="AlternativeAddress" placeholder="Alternative address">
   <label for="AlternativeZip">Enter alternative zip code. Leave blank for PayPal zip code</label>
   <input name="AlternativeZip" [required]="model.addressLine ? true : false" [(ngModel)]="model.zip" type="text" style=" font-size: 13px;" class="form-control" id="AlternativeZip" placeholder="Alternative zip code">
+  <br>
   <div id="pp-checkout" type="submit" style="margin-left: 78px;"></div>
 </div>
 

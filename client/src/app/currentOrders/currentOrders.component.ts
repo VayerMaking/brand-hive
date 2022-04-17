@@ -13,9 +13,11 @@ import { ToastrService } from "ngx-toastr";
   })
   export class currentOrdersComponent implements OnInit {
     orders : any 
-  totalPages: string;
-  completed: string = "false";
-  model: any = {};
+    pageSize: any = "12";
+    totalPages: any = "100";
+    currentPage: any = "1";
+    completed: string = "false";
+    model: any = {};
 
     constructor(
       public accountService : AccountServiceService,
@@ -32,7 +34,7 @@ import { ToastrService } from "ngx-toastr";
 
     async getOrders() {
       
-     this.orderService.getOrders(this.completed, this.accountService.getRole()).subscribe(response => {
+     this.orderService.getOrders(this.completed, this.accountService.getRole(), this.pageSize, this.currentPage, this.totalPages).subscribe(response => {
 
       
       this.orders = response.body;
@@ -51,7 +53,7 @@ import { ToastrService } from "ngx-toastr";
     }
 
     refreshOrders(){
-      this.orderService.getOrders("true",this.accountService.getRole()).subscribe(response => {
+      this.orderService.getOrders("true",this.accountService.getRole(), this.pageSize, this. currentPage, this.totalPages).subscribe(response => {
 
       
         this.orders = response.body;
@@ -95,6 +97,7 @@ import { ToastrService } from "ngx-toastr";
     selectSeller(seller: any){
       this.model.seller=seller
     }
+    
     rateSeller(){
     console.log(this.model.seller.id);
      this.accountService.rateSeller(this.model.seller.id, this.model.score).subscribe(response => {
@@ -110,5 +113,14 @@ import { ToastrService } from "ngx-toastr";
     }) 
     
     }
+
+    onChangePage(pageOfItems: Array<any>) {
+      // update current page of items
+      console.log(pageOfItems)
+      this.currentPage = pageOfItems["pageIndex"]+1;
+      this.pageSize = String(pageOfItems["pageSize"]);
+      this.ngOnInit();
+  
+  }
 
   }

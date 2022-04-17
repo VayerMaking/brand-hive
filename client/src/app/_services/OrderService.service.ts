@@ -21,14 +21,14 @@ export class OrderServiceService {
 
   constructor(private http: HttpClient) { }
 
-    getOrders(completed: any, mode: any) {
+    getOrders(completed: any, mode: any, pageSize: any, currentPage: any , totalPages: any) {
       if(mode== 'user'){
         console.log(completed);
         return this.http.get(this.baseUrl+'order/getAllByBuyerId', 
         {
           observe: 'response',
-          params: new HttpParams().set("pageNumber", this.currentPage)
-                                  .set("pageSize", this.pageSize)
+          params: new HttpParams().set("pageNumber", currentPage)
+                                  .set("pageSize", pageSize)
                                   .set("orderBy", this.filters.orderBy)
                                   .set("filters","{\"isCompleted\": +"+completed+"}")
                                   //.set("direction", this.direction=="arrow_downward" ? "asc" : "desc")
@@ -43,8 +43,8 @@ export class OrderServiceService {
         return this.http.get(this.baseUrl+'order/getAllBySellerId', 
         {
           observe: 'response',
-          params: new HttpParams().set("pageNumber", this.currentPage)
-                                  .set("pageSize", this.pageSize)
+          params: new HttpParams().set("pageNumber", currentPage)
+                                  .set("pageSize", pageSize)
                                   .set("orderBy", this.filters.orderBy)
                                   .set("filters","{\"isCompleted\": +"+completed+"}")
                                   //.set("direction", this.direction=="arrow_downward" ? "asc" : "desc")
