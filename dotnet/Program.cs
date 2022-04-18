@@ -24,7 +24,7 @@ namespace dotnet
                 try
                 {
                     var context = services.GetRequiredService<DataContext>();
-                    await context.Database.MigrateAsync();
+                    //await context.Database.MigrateAsync();
                 }
                 catch(Exception e)
                 {

@@ -34,7 +34,7 @@ export class CourseDialogComponent implements OnInit {
     },
     env: 'sandbox',
     client: {
-      sandbox: 'AXvzCxXl7dxX2Pg2g25KxIrvwOb0RHKHcJ1UTDNE5M8RCiVa-evzmLwmfpnS5wDDUmF8dIGQqiRe1orw'
+      sandbox: 'ATaStt-qH0mxT5y1EjroSWPoY2tH1dsOPvqMxAEJNxRKwfU-GwbOMzMcpv-8MxMoqBaqVFeezZKvyKAf'
     },
     commit: true,
     payment: (data, actions) => {
@@ -69,16 +69,19 @@ export class CourseDialogComponent implements OnInit {
             //this.productService.deleteProduct(element.id).subscribe();
           
           });
-          this.cart = [];
-          this.cartService.emptyCart();
+          
 
           
 
           this.cart.forEach(element => {
             //this.orderService.addOrder(o);
-            this.productService.deleteProduct(element.id).subscribe();
+            console.log(element.id);
+            this.productService.deleteProduct(element.id).subscribe((res)=>{console.log(res)});
           
           });
+
+          this.cart = [];
+          this.cartService.emptyCart();
 
           //window.location.reload();
           

@@ -82,7 +82,7 @@ export class ProductListComponent implements OnInit {
 
       this.typesLoaded=true;
       this.types = response;
-      console.log(response[0])
+      console.log(response)
     }, error => {
       console.log(error.error);
     })
